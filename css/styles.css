@@ -1,0 +1,758 @@
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /*adapta la imagen al contenedor sin que se distorsione*/
+}
+
+header{
+    top: 0;
+    padding: 15px 0;
+}
+
+footer{
+    height: 100%;
+    margin: 0;
+    background-color: #ffc3c1dc;
+    color: black;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box; /*para que no se desborde el footer y se genere una barra de desplazamiento*/
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url(../assets/img/BannerWeb.png);
+    font-family: "Poppins", sans-serif;
+}
+
+main{
+    flex-grow: 1; /* "Empuja" el footer para abajo rellenando el espacio que quede hasta llegar al min-height de 100vh del body*/
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2{
+    margin-left: 20px;
+    font-size: 30px;
+    color: rgb(250, 235, 235);
+    font-style: italic;
+}
+
+a{
+    padding: 10px 15px; /* Espacio que ocupa el texto dentro del "boton" para que parezca que los botones estan más separados*/
+    text-decoration: none;
+    display: block; /* El enlace ocupa todo el espacio del texto para que se pueda clickear más facil */
+}
+
+ul{
+    list-style: none;
+}
+
+
+/* ------------------------------------------------------------ENCABEZADO (todas las paginas iguales)------------------------------------------------------------ */
+
+#encabezado{
+    background-color: #d58d8a;
+    height: 83px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    margin: 0 auto;
+}
+
+.logoEspiral {
+    width: 150px;
+}
+
+.logoEspiral img{
+    height: 60px;
+    width: auto;
+}
+
+.mainNav .menuPrincipal{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px
+}
+
+.mainNav .menuPrincipal a {
+    color: black;
+}
+
+.mainNav .menuPrincipal .itemInicioActual a{
+    background-color: #d58d8a   ;
+    color: #fff;
+}
+
+.header-search-nav{
+    background-color: #d58d8a;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    margin-right: 25px;
+}
+
+.header-search-nav .d-flex{
+    background-color: #d58d8a;
+}
+
+.header-search-nav .d-flex .btn-outline-success{
+    background-color: #faf6f6;
+    color: black;
+    border-color: grey;
+}
+
+/* --- ESTILOS PARA EL HOVER Y FOCUS DEL BOTÓN --- */
+.header-search-nav .d-flex .btn-outline-success:hover,
+.header-search-nav .d-flex .btn-outline-success:focus {
+    background-color: #8c728e; 
+    color: #fff; /* Color del texto del botón cuando se activa hover/focus (cambia a blanco) */
+    border-color: #8c728e; /* Color del borde del botón cuando se act hover/focus */
+}
+
+.header-search-nav .d-flex .form-control{
+    background-color: white;
+}
+.header-search-nav .container-fluid{
+    padding: 0;
+}
+
+.bg-body-tertiary{
+    background-color: #ffc3c1 !important; /* NO PODIA CAMBIARLE EL COLOR AL FONDO DEL NAVBAR DE BOOTSTRAP */
+}
+
+
+/* ------------------------------------------------------------FOOTER CON GRID(todas las paginas iguales)------------------------------------------------------------ */
+
+.footer-grid{
+    display: grid;
+    grid-template-columns: auto repeat(3, 1fr) auto;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    grid-template-areas: 
+    "logo camion whatsapp candado contacto"
+    "copyright copyright copyright copyright copyright";
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.footer-logo-grid{
+    grid-area: logo;
+    width: 10em;
+    justify-self: start;
+    margin-left: 10px;
+    padding-top: 50px;
+}
+
+.footer-redes-grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-redes-grid a{
+    font-size: 2.5em;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.footer-logo-grid .footerLogo{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.footer-iconos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid grey;
+    padding-right: 20px;
+}
+
+.footer-icono-lock{
+    border-right: none;
+    padding-right: 0;
+}
+
+.footer-iconos i{
+    font-size: 2em;
+    padding-bottom: 5px;
+}
+
+.titulo-icono-footer,
+.subtitulo-icono-footer{
+    text-align: center;
+    margin: 0;
+    line-height: 1.2;
+    font-size: 1.5em;
+}
+
+.titulo-icono-footer {
+    color: rgb(224, 145, 140);
+}
+
+.subtitulo-icono-footer {
+    color: rgb(196, 136, 132);
+    font-size: 0.9em;
+}
+
+.footer-contacto-redes{
+    grid-area: contacto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: end;
+    text-align: center;
+}
+
+.footer-contacto-grid{
+    margin-bottom: 10px;
+}
+
+.footer-contacto-grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-contacto-grid a{
+    font-size: 2em;
+    color: #f0f0f0;
+    transition: color 0.3s ease;
+}
+
+.footer-redes-grid a .fa-facebook:hover {
+    color: #1877F2; 
+}
+
+.footer-redes-grid a .fa-instagram:hover{
+    color: #C13584;
+}
+
+.footer-redes-grid a .fa-whatsapp:hover {
+    color: #25D366; 
+}
+
+.footer-copyright-grid {
+    grid-area: copyright;
+    text-align: center; 
+    padding-top: 10px;
+    border-top: 1px solid #333;
+    font-size: 0.85em;
+    color: #aaa;
+    margin-top: 10px;
+}
+
+.footer-copyright-grid p {
+    margin: 0;
+}
+
+
+
+/* ------------------------------------------------------------SECCION INICIO------------------------------------------------------------ */
+
+.conoceAgenda2025{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(250, 235, 235);
+    color: black;
+    height: 100px;
+    font-family: "Dancing Script", cursive;
+    font-size: 30px;
+    padding: 20px;
+   
+}
+
+#destacadosInicio{
+    background-color: #d58d8a;
+    color: black;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.card-text{
+    font-size: 0.5em;
+}
+
+.card{
+    background-color: #ffc3c1dc;
+    border: 1px solid black;
+}
+
+.tituloSeccion{
+    padding-top: 90px;
+    margin-left: 20px;
+    font-size: 40px;
+    color: rgb(250, 235, 235);
+}
+
+.imgFondo{
+    width: 1750px;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.pieFoto{
+    color: rgb(250, 235, 235);
+    text-align: end;
+    font-size: 50px;
+    padding-right: 20px;
+}
+
+.imagenesInicio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.itemDestacado {
+    display: inline-block; 
+    width: 250px;
+    margin: 0 15px 30px 15px;
+    vertical-align: top; 
+}
+
+.itemDestacado img {
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+}
+
+.itemDestacado .card{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 15px; /*repito el border-radius para que el borde solid black quede bien y la imagen no lo pise*/
+    border: 1px solid black;
+}
+
+.itemDestacado .card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between; 
+}
+
+.textoInferiorImagen{
+    font-size: 20px;
+    color: black;
+    text-align: center;  
+}
+
+.btn-custom{
+    background-color: #faf6f6;
+    color: black;
+    border-color: grey;
+}
+
+.btn-custom:hover,
+.btn-custom:focus
+.btn-custom:active {
+    background-color: #8c728e; 
+    color: #fff; /* Color del texto del botón cuando se activa hover/focus (cambia a blanco) */
+    border-color: #8c728e; /* Color del borde del botón cuando se act hover/focus */
+}
+
+/* ------------------------------------------------------------SECCION QUIENES SOMOS------------------------------------------------------------ */
+
+
+.quienesSomosContenido{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Columna de texto y boton "conoce más" */
+.textoQuienesSomos{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Texto quienes somos */
+.textoQuienesSomos p{
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.botonMasInfo{
+    align-self: flex-start; /*alinea el boton abajo del texto a la izquierda*/
+    padding: 12px 25px;
+    background-color: #faf6f6;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: 1px solid grey;
+}
+
+.botonMasInfo:hover{
+    background-color: #8c728e; 
+    color: #fff; 
+    border-color: #8c728e;
+}
+
+/* Columna imagen */
+
+.imagenQuienesSomos{
+    flex-shrink: 0;
+    width: 350px;
+    display: flex;
+    align-items: center;
+}
+
+.imagenQuienesSomos img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+
+/* ------------------------------------------------------------SECCION PRODUCTOS------------------------------------------------------------ */
+
+/*-----Contenedor principal de la PILA (vertical) de productos-----*/
+.productosContenedor {
+    padding: 40px 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/*-----Bloque individual del producto (Titulo + Imagen + Texto a la derecha)-----*/
+.itemProductoHorizontal {
+    background-color: #ffc3c1dc;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    display: block;
+    border: 1px groove black;
+}
+
+/*-----Titulo del producto-----*/
+.tituloProducto{
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: underline;   
+}
+
+/*-----Contenedor FLEX para la imagen y el texto (el texto va a la derecha de la imagen)-----*/
+.contenedorImagenTexto{
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+/* ----- Contenedor de la Imagen del Producto ----- */
+.imagenProductoHorizontal{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+/* ----- Estilo para las "img" que esten dentro del contenedor ----- */
+.imagenProductoHorizontal img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* ----- Contenedor del Contenido de Texto (a la derecha de la imagen) ----- */
+.descripcionHorizontal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* ----- Párrafo de la descripción ----- */
+.textoHorizontalDerecha {
+    font-size: 0.7em;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    overflow-wrap: break-word;
+}
+
+.botonVerMas{
+    text-align: center; /*texto centrado*/
+    background-color: rgb(250, 235, 235); /*color de fondo*/
+    color: black; /*color de la letra*/
+    padding: 10px 20px; /*alto y ancho*/
+    border-radius: 5px; /*con un solo valor alinea TODO el boton*/
+    text-decoration: none; /*saco el subrayado que viene por defecto*/
+    font-weight: bold; /*negrita*/
+    border: 1px solid grey;
+    margin-top: auto; /* "Empuja" el boton para abajo*/
+}
+
+.botonVerMas:hover,
+.botonVerMas:focus
+.botonVerMas:active {
+    background-color: #8c728e; 
+    color: #fff; /* Color del texto del botón cuando se activa hover/focus (cambia a blanco) */
+    border-color: #8c728e; /* Color del borde del botón cuando se act hover/focus */
+}
+
+
+/* ------------------------------------------------------------SECCION SERVICIOS------------------------------------------------------------ */
+
+/*Contenedor principal (todo el ancho de la la pagina)*/
+.contenedorServicios{
+    text-align: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/*bloque de cada servicio*/
+.bloqueServicio{
+    width: 280px; /*tamaño del bloque de servicio*/
+    background-color: #ffc3c1dc;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    flex-basis: 280px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Parte superior del bloque (donde va la imagen)*/
+.contenedorImagen{
+    width: 100%; /*para ocupar todo el ancho del bloque de servicio*/
+    height: 180px; /*altura de la imagen*/
+    margin-bottom: 15px;
+    overflow: hidden; /*Si la imagen se desborda se oculta ese excedente*/
+    border-radius: 10px 10px 0 0; /*bordes redondeados arriba (izquierda y derecha)*/
+}
+
+/*la propia imagen en si*/
+.contenedorImagen img{
+    width: 100%; /*imagen ocupando todo el ancho de su bloque*/
+    height: 100%; /*imagen ocupando todo el alto de su bloque*/
+}
+
+.tituloServicio{
+    margin: 0 15px 20px 15px;
+}
+
+.textoInferiorServicio{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: small;
+    margin: auto 15px 20px 15px;
+}
+
+.botonVerMasServicios{
+    text-align: center; /*texto centrado*/
+    background-color: rgb(250, 235, 235); /*color de fondo*/
+    color: black; /*color de la letra*/
+    padding: 10px 20px; /*alto y ancho*/
+    border-radius: 5px; /*con un solo valor alinea TODO el boton*/
+    font-weight: bold; /*negrita*/
+    border: 1px solid grey;
+    margin: auto 70px 0 70px; /* "Empuja" el boton para abajo*/
+}
+
+.botonVerMasServicios:hover,
+.botonVerMasServicios:focus
+.botonVerMasServicios:active {
+    background-color: #8c728e; 
+    color: #fff; /* Color del texto del botón cuando se activa hover/focus (cambia a blanco) */
+    border-color: #8c728e; /* Color del borde del botón cuando se act hover/focus */
+}
+
+/* ------------------------------------------------------------SECCION CONTACTO------------------------------------------------------------ */
+
+/*Estilo boton "Enviar"*/
+.formularioContacto button[type="submit"]{
+    max-width: 400px;
+    background-color: #faf6f6;
+    color: black;
+    padding: 12px; /*relleno alrededor del texto "Enviar", cuanto más padding mas crece el boton*/
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /*hace que cuando pases el mousse se ponga la mano en vez del cursor*/
+    width: 100%;
+}
+
+.formularioContacto{
+    text-align: left;
+    max-width: 600px; 
+    margin: 0 auto; 
+    padding: 30px;
+}
+
+.form-grupo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: rgb(250, 235, 235);
+}
+
+.form-grupo {
+  margin-bottom: 20px;
+}
+
+/*Cambia el color del texto del preview*/
+input::placeholder,
+textarea::placeholder{
+    color: rgb(194, 193, 193);
+}
+
+/*Cada cuadro de texto*/
+/*Reutilizo la clase para "textarea" ya que cuando lo defini
+le puse rows=5 que lo hace más alto*/
+.cajaForm {
+    width: 400px; /*ancho*/ 
+    padding: 10px; /*cuanto mas padding mas relleno alrededor del texto del cuadro y mas grande se hace el cuadro*/ 
+    border: 1px solid #ccc; /*borde del cuadro de texto*/
+    border-radius: 5px; /*borde redondeado*/
+}
+
+
+
+
+
+
+/*--------------------------------------------MEDIA QUERIES--------------------------------------------*/
+/*-----INICIO-----*/
+
+
+/*-----PRODUCTOS-----*/
+@media (max-width: 768px) {
+    .tituloSeccion{
+        text-align: center;
+    }
+
+    .contenedorImagenTexto{
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .imagenProductoHorizontal img{
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .textoHorizontalDerecha{
+        text-align: center;
+    }
+}
+
+
+/*-----SERVICIOS-----*/
+@media (max-width: 768px) {
+    .contenedorServicios {
+        padding: 20px 10px;
+    }
+}
+
+/*-----QUIENES SOMOS-----*/
+@media (max-width: 768px) {
+    .quienesSomosContenido {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .textoQuienesSomos {
+        text-align: center;
+    }
+
+    .textoQuienesSomos .botonMasInfo {
+        align-self: center;
+    }
+
+    .imagenQuienesSomos {
+        width: 100%;
+        flex-shrink: 1;
+    }
+}
+
+/*-----FOOTER-----*/
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /*Apilo todo en una sola columna*/
+        grid-template-rows: auto;
+        gap: 25px;
+        grid-template-areas:
+            "logo"
+            "camion"
+            "whatsapp"
+            "candado"
+            "contacto"
+            "copyright";
+        justify-items: center;
+    }
+
+    .footer-logo-grid {
+        justify-self: center; /* Logo centrado */
+        margin-left: 0;
+    }
+    
+    .footer-iconos {
+        border-right: none; /* Elimina el borde que tenia la versión desktop*/
+        padding-right: 0;
+        width: auto;
+    }
+    
+    .footer-contacto-redes {
+        justify-self: center; /* Centra el bloque de contacto */
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .titulo-icono-footer {
+        font-size: 1.2em;
+    }
+    
+    .subtitulo-icono-footer {
+        font-size: 0.8em;
+    }
+    
+    .footer-redes-grid a {
+        font-size: 2em;
+        gap: 15px;
+    }
+}
+
+
+
