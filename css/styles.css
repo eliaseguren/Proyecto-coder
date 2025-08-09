@@ -652,7 +652,16 @@ le puse rows=5 que lo hace más alto*/
 
 /*--------------------------------------------MEDIA QUERIES--------------------------------------------*/
 /*-----INICIO-----*/
+@media (max-width: 768px) {
+    .conoceAgenda2025{
+        height: 50px;
+        font-size: 20px;
+    }
 
+    .texto-novedades-index{
+        margin: 0;
+    }
+}
 
 /*-----PRODUCTOS-----*/
 @media (max-width: 768px) {
