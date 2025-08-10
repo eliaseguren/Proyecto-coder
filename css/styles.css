@@ -642,18 +642,18 @@ le puse rows=5 que lo hace más alto*/
     border-radius: 5px; /*borde redondeado*/
 }
 
-/* Estilo para los estados hover y focus */
+
 .boton-form-send:hover,
 .boton-form-send:focus {
-    background-color: #8c728e; /* El color que me diste */
+    background-color: #8c728e; 
     color: #fff;
     border-color: #8c728e;
     outline: none;
 }
 
-/* Estilo para el estado active (cuando se hace clic) */
+
 .boton-form-send:active {
-    background-color: #745f76; /* Un tono más oscuro para simular que se presiona */
+    background-color: #745f76; 
 }
 
 
@@ -720,6 +720,21 @@ le puse rows=5 que lo hace más alto*/
     .imagenQuienesSomos {
         width: 100%;
         flex-shrink: 1;
+    }
+}
+
+/*-----QUIENES SOMOS-----*/
+@media (max-width: 768px) {
+    .formularioContacto {
+        padding: 15px; 
+        box-sizing: border-box;
+    }
+
+    .form-grupo {
+        margin-bottom: 15px; 
+    }
+    .boton-form-send {
+        width: 100%;
     }
 }
 
