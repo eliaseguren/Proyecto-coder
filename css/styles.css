@@ -92,8 +92,14 @@ ul{
 
 .mainNav .menuPrincipal .itemInicioActual a{
     background-color: #d58d8a   ;
-    color: #fff;
+    color: #ffc3c1;
+    text-decoration: underline;
+    text-decoration-color: #ffc3c1;
+    text-decoration-thickness: 4px;
+    text-underline-offset: 4px;
 }
+
+
 
 .header-search-nav{
     background-color: #d58d8a;
@@ -298,10 +304,20 @@ Entonces no hace falta ponerle los nombres (porque no se utilizan)*/
 }
 
 .tituloSeccion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-top: 90px;
     margin-left: 20px;
     font-size: 40px;
     color: rgb(250, 235, 235);
+    align-items: center;
+}
+
+.subtitulo-seccion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .imgFondo{
