@@ -2,7 +2,6 @@
 img {
     max-width: 100%;
     height: auto;
-    display: block;
     object-fit: cover; /*adapta la imagen al contenedor sin que se distorsione*/
 }
 
@@ -136,13 +135,15 @@ ul{
 
 /* ------------------------------------------------------------FOOTER CON GRID(todas las paginas iguales)------------------------------------------------------------ */
 
+/*Las areas estan con puntos porque estan agrupadas dentro del contenedor footer-iconos que tiene display flex --> column
+Entonces no hace falta ponerle los nombres (porque no se utilizan)*/
 .footer-grid{
     display: grid;
     grid-template-columns: auto repeat(3, 1fr) auto;
     grid-template-rows: auto auto;
     gap: 20px;
     grid-template-areas: 
-    "logo camion whatsapp candado contacto"
+    "logo . . . contacto"
     "copyright copyright copyright copyright copyright";
     margin: 0 auto;
     padding: 0 10px;
@@ -263,8 +264,6 @@ ul{
 .footer-copyright-grid p {
     margin: 0;
 }
-
-
 
 /* ------------------------------------------------------------SECCION INICIO------------------------------------------------------------ */
 
@@ -590,7 +589,7 @@ ul{
 }
 
 .botonVerMasServicios:hover,
-.botonVerMasServicios:focus
+.botonVerMasServicios:focus,
 .botonVerMasServicios:active {
     background-color: #8c728e; 
     color: #fff; /* Color del texto del botón cuando se activa hover/focus (cambia a blanco) */
@@ -602,8 +601,6 @@ ul{
 /*Estilo boton "Enviar"*/
 .formularioContacto button[type="submit"]{
     max-width: 400px;
-    background-color: #faf6f6;
-    color: black;
     padding: 12px; /*relleno alrededor del texto "Enviar", cuanto más padding mas crece el boton*/
     border: none;
     border-radius: 5px;
@@ -645,9 +642,19 @@ le puse rows=5 que lo hace más alto*/
     border-radius: 5px; /*borde redondeado*/
 }
 
+/* Estilo para los estados hover y focus */
+.boton-form-send:hover,
+.boton-form-send:focus {
+    background-color: #8c728e; /* El color que me diste */
+    color: #fff;
+    border-color: #8c728e;
+    outline: none;
+}
 
-
-
+/* Estilo para el estado active (cuando se hace clic) */
+.boton-form-send:active {
+    background-color: #745f76; /* Un tono más oscuro para simular que se presiona */
+}
 
 
 /*--------------------------------------------MEDIA QUERIES--------------------------------------------*/
@@ -724,9 +731,9 @@ le puse rows=5 que lo hace más alto*/
         gap: 25px;
         grid-template-areas:
             "logo"
-            "camion"
-            "whatsapp"
-            "candado"
+            "."
+            "."
+            "."
             "contacto"
             "copyright";
         justify-items: center;
