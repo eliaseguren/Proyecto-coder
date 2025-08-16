@@ -1,0 +1,237 @@
+@charset "UTF-8";
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; /*adapta la imagen al contenedor sin que se distorsione*/
+}
+
+header {
+  top: 0;
+  padding: 15px 0;
+}
+
+footer {
+  height: 100%;
+  margin: 0;
+  background-color: rgba(255, 195, 193, 0.862745098);
+  color: black;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box; /*para que no se desborde el footer y se genere una barra de desplazamiento*/
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url(../assets/img/BannerWeb.png);
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  flex-grow: 1; /* "Empuja" el footer para abajo rellenando el espacio que quede hasta llegar al min-height de 100vh del body*/
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h2 {
+  margin-left: 20px;
+  font-size: 30px;
+  color: rgb(250, 235, 235);
+  font-style: italic;
+}
+
+a {
+  padding: 10px 15px; /* Espacio que ocupa el texto dentro del "boton" para que parezca que los botones estan más separados*/
+  text-decoration: none;
+  display: block; /* El enlace ocupa todo el espacio del texto para que se pueda clickear más facil */
+}
+
+ul {
+  list-style: none;
+}
+
+/*------------------------------------------------------------VARIABLES------------------------------------------------------------*/
+/*------------------------------------------------------------COLORES DE SOCIAL MEDIA------------------------------------------------------------*/
+/*------------------------------------------------------------MIXINS------------------------------------------------------------*/
+/* ------------------------------------------------------------ENCABEZADO (todas las paginas iguales)------------------------------------------------------------ */
+#encabezado {
+  background-color: #d58d8a;
+  height: 83px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  margin: 0 auto;
+}
+#encabezado .logoEspiral {
+  width: 150px;
+}
+#encabezado .logoEspiral img {
+  height: 60px;
+  width: auto;
+}
+#encabezado .mainNav .menuPrincipal {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 25px;
+}
+#encabezado .mainNav .menuPrincipal a {
+  color: black;
+}
+#encabezado .mainNav .menuPrincipal .itemInicioActual a {
+  background-color: #d58d8a;
+  color: #ffc3c1;
+  text-decoration: underline;
+  text-decoration-color: #ffc3c1;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 4px;
+}
+
+.header-search-nav {
+  background-color: #d58d8a;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+  margin-right: 25px;
+}
+.header-search-nav .d-flex {
+  background-color: #d58d8a;
+}
+.header-search-nav .d-flex .btn-outline-success {
+  background-color: #faf6f6;
+  color: black;
+  border-color: grey;
+}
+.header-search-nav .d-flex .btn-outline-success:hover, .header-search-nav .d-flex .btn-outline-success:focus, .header-search-nav .d-flex .btn-outline-success:active {
+  background-color: #8c728e;
+  color: white;
+  border-color: #8c728e;
+}
+.header-search-nav .d-flex .form-control {
+  background-color: white;
+}
+.header-search-nav .container-fluid {
+  padding: 0;
+}
+
+.bg-body-tertiary {
+  background-color: #ffc3c1 !important;
+}
+
+/* ------------------------------------------------------------FOOTER CON GRID(todas las paginas iguales)------------------------------------------------------------ */
+.footer-grid {
+  display: grid;
+  grid-template-columns: auto repeat(3, 1fr) auto;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  grid-template-areas: "logo . . . contacto" "copyright copyright copyright copyright copyright";
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.footer-grid .footer-logo-grid {
+  grid-area: logo;
+  width: 10em;
+  justify-self: start;
+  margin-left: 10px;
+  padding-top: 50px;
+}
+.footer-grid .footer-redes-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.footer-grid .footer-redes-grid a {
+  font-size: 2.5em;
+  color: black;
+  transition: color 0.3s ease;
+}
+.footer-grid .footer-redes-grid a .fa-facebook:hover {
+  color: #1877F2;
+}
+.footer-grid .footer-redes-grid a .fa-instagram:hover {
+  color: #C13584;
+}
+.footer-grid .footer-redes-grid a .fa-whatsapp:hover {
+  color: #25D366;
+}
+.footer-grid .footer-logo-grid .footerLogo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.footer-grid .footer-iconos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid grey;
+  padding-right: 20px;
+}
+.footer-grid .footer-iconos.footer-icono-lock {
+  /*Este icono me ahorra poner de nuevo ".footer-iconos", es
+  decir, referencia al padre*/
+  border-right: none;
+  padding-right: 0;
+}
+.footer-grid .footer-iconos i {
+  font-size: 2em;
+  padding-bottom: 5px;
+}
+.footer-grid .titulo-icono-footer,
+.footer-grid .subtitulo-icono-footer {
+  text-align: center;
+  margin: 0;
+  line-height: 1.2;
+  font-size: 1.5em;
+}
+.footer-grid .titulo-icono-footer {
+  color: rgb(224, 145, 140);
+}
+.footer-grid .subtitulo-icono-footer {
+  color: rgb(196, 136, 132);
+  font-size: 0.9em;
+}
+.footer-grid .footer-contacto-redes {
+  grid-area: contacto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-self: end;
+  text-align: center;
+}
+.footer-grid .footer-contacto-grid {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.footer-grid .footer-contacto-grid a {
+  font-size: 2em;
+  color: #f0f0f0;
+  transition: color 0.3s ease;
+}
+.footer-grid .footer-copyright-grid {
+  grid-area: copyright;
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #333;
+  font-size: 0.85em;
+  color: #aaa;
+  margin-top: 10px;
+}
+.footer-grid .footer-copyright-grid p {
+  margin: 0;
+}
+
+/*# sourceMappingURL=estilos.css.map */

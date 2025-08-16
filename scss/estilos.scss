@@ -1,0 +1,297 @@
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover; /*adapta la imagen al contenedor sin que se distorsione*/
+}
+
+header{
+    top: 0;
+    padding: 15px 0;
+}
+
+footer{
+    height: 100%;
+    margin: 0;
+    background-color: #ffc3c1dc;
+    color: black;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box; /*para que no se desborde el footer y se genere una barra de desplazamiento*/
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url(../assets/img/BannerWeb.png);
+    font-family: "Poppins", sans-serif;
+}
+
+main{
+    flex-grow: 1; /* "Empuja" el footer para abajo rellenando el espacio que quede hasta llegar al min-height de 100vh del body*/
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2{
+    margin-left: 20px;
+    font-size: 30px;
+    color: rgb(250, 235, 235);
+    font-style: italic;
+}
+
+a{
+    padding: 10px 15px; /* Espacio que ocupa el texto dentro del "boton" para que parezca que los botones estan más separados*/
+    text-decoration: none;
+    display: block; /* El enlace ocupa todo el espacio del texto para que se pueda clickear más facil */
+}
+
+ul{
+    list-style: none;
+}
+
+/*------------------------------------------------------------VARIABLES------------------------------------------------------------*/
+$color-principal: #d58d8a;
+$color-secundario: #ffc3c1;
+$color-efect-button: #8c728e;
+$color-claro: #faf6f6;
+$color-blanco: white;
+$color-negro: black;
+$color-gris: grey;
+$color-gris-oscuro: #333;
+$color-gris-claro: #aaa;
+$color-gris-muy-claro: #f0f0f0;
+$color-iconos-footer: rgb(224, 145, 140);
+$color-subtitulos-footer: rgb(196, 136, 132);
+
+/*------------------------------------------------------------COLORES DE SOCIAL MEDIA------------------------------------------------------------*/
+$facebook: #1877F2; 
+$instagram: #C13584;
+$whatsapp: #25D366;
+
+/*------------------------------------------------------------MIXINS------------------------------------------------------------*/
+@mixin boton-hover-focus {
+    background-color: $color-efect-button;
+    color: $color-blanco;
+    border-color: $color-efect-button;
+}
+
+/* ------------------------------------------------------------ENCABEZADO (todas las paginas iguales)------------------------------------------------------------ */
+
+
+
+
+#encabezado {
+    background-color: $color-principal;
+    height: 83px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    margin: 0 auto;
+
+    .logoEspiral {
+        width: 150px;
+
+        img {
+            height: 60px;
+            width: auto;
+        }
+    }
+
+    .mainNav {
+        .menuPrincipal {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+
+            a {
+                color: $color-negro;
+            }
+
+            .itemInicioActual a {
+                background-color: $color-principal;
+                color: $color-secundario;
+                text-decoration: underline;
+                text-decoration-color: $color-secundario;
+                text-decoration-thickness: 4px;
+                text-underline-offset: 4px;
+            }
+        }
+    }
+}
+
+.header-search-nav {
+    background-color: $color-principal;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    margin-right: 25px;
+
+    .d-flex {
+        background-color: $color-principal;
+
+        .btn-outline-success {
+            background-color: $color-claro;
+            color: $color-negro;
+            border-color: $color-gris;
+
+            &:hover,
+            &:focus,
+            &:active {
+                @include boton-hover-focus;
+            }
+        }
+
+        .form-control {
+            background-color: $color-blanco;
+        }
+    }
+
+    .container-fluid {
+        padding: 0;
+    }
+}
+
+.bg-body-tertiary {
+    background-color: $color-secundario !important;
+}
+
+/* ------------------------------------------------------------FOOTER CON GRID(todas las paginas iguales)------------------------------------------------------------ */
+.footer-grid {
+    display: grid;
+    grid-template-columns: auto repeat(3, 1fr) auto;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    grid-template-areas: 
+        "logo . . . contacto"
+        "copyright copyright copyright copyright copyright";
+    margin: 0 auto;
+    padding: 0 10px;
+
+    .footer-logo-grid {
+        grid-area: logo;
+        width: 10em;
+        justify-self: start;
+        margin-left: 10px;
+        padding-top: 50px;
+    }
+    
+    .footer-redes-grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        a {
+            font-size: 2.5em;
+            color: $color-negro;
+            transition: color 0.3s ease;
+            
+            .fa-facebook:hover {
+                color: $facebook; 
+            }
+
+            .fa-instagram:hover {
+                color: $instagram;
+            }
+
+            .fa-whatsapp:hover {
+                color: $whatsapp; 
+            }
+        }
+    }
+    
+    .footer-logo-grid {
+        .footerLogo {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    .footer-iconos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-right: 1px solid $color-gris;
+        padding-right: 20px;
+
+        &.footer-icono-lock { 
+            /*Este icono me ahorra poner de nuevo ".footer-iconos", es
+            decir, referencia al padre*/
+            border-right: none;
+            padding-right: 0;
+        }
+
+        i {
+            font-size: 2em;
+            padding-bottom: 5px;
+        }
+    }
+
+    .titulo-icono-footer,
+    .subtitulo-icono-footer {
+        text-align: center;
+        margin: 0;
+        line-height: 1.2;
+        font-size: 1.5em;
+    }
+
+    .titulo-icono-footer {
+        color: $color-iconos-footer;
+    }
+
+    .subtitulo-icono-footer {
+        color: $color-subtitulos-footer;
+        font-size: 0.9em;
+    }
+
+    .footer-contacto-redes {
+        grid-area: contacto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-self: end;
+        text-align: center;
+    }
+
+    .footer-contacto-grid {
+        margin-bottom: 10px;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+
+        a {
+            font-size: 2em;
+            color: $color-gris-muy-claro;
+            transition: color 0.3s ease;
+        }
+    }
+    
+    .footer-copyright-grid {
+        grid-area: copyright;
+        text-align: center; 
+        padding-top: 10px;
+        border-top: 1px solid $color-gris-oscuro;
+        font-size: 0.85em;
+        color: $color-gris-claro;
+        margin-top: 10px;
+
+        p {
+            margin: 0;
+        }
+    }
+}
