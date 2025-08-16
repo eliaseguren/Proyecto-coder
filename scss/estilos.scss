@@ -82,10 +82,13 @@ $whatsapp: #25D366;
     border-color: $color-efect-button;
 }
 
+@mixin social-hover($color) {
+    &:hover {
+        color: $color;
+    }
+}
+
 /* ------------------------------------------------------------ENCABEZADO (todas las paginas iguales)------------------------------------------------------------ */
-
-
-
 
 #encabezado {
     background-color: $color-principal;
@@ -196,16 +199,14 @@ $whatsapp: #25D366;
             color: $color-negro;
             transition: color 0.3s ease;
             
-            .fa-facebook:hover {
-                color: $facebook; 
+            .fa-facebook {
+                @include social-hover($facebook);
             }
-
-            .fa-instagram:hover {
-                color: $instagram;
+            .fa-instagram {
+                @include social-hover($instagram);
             }
-
-            .fa-whatsapp:hover {
-                color: $whatsapp; 
+            .fa-whatsapp {
+                @include social-hover($whatsapp);
             }
         }
     }
