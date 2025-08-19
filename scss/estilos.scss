@@ -69,6 +69,12 @@ $color-gris-claro: #aaa;
 $color-gris-muy-claro: #f0f0f0;
 $color-iconos-footer: rgb(224, 145, 140);
 $color-subtitulos-footer: rgb(196, 136, 132);
+$color-fondo-claro: rgb(250, 235, 235);
+$color-texto-gris: #555;
+$color-texto-gris-claro: #666;
+$color-placeholder: rgb(194, 193, 193);
+$color-borde-gris: #ccc;
+
 
 /*------------------------------------------------------------COLORES DE SOCIAL MEDIA------------------------------------------------------------*/
 $facebook: #1877F2; 
@@ -183,7 +189,7 @@ $whatsapp: #25D366;
     .footer-logo-grid {
         grid-area: logo;
         width: 10em;
-        justify-self: start;
+        // justify-self: start;
         margin-left: 10px;
         padding-top: 50px;
     }
@@ -263,7 +269,7 @@ $whatsapp: #25D366;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        justify-self: end;
+        // justify-self: end;
         text-align: center;
     }
 
@@ -294,5 +300,496 @@ $whatsapp: #25D366;
         p {
             margin: 0;
         }
+    }
+}
+
+/* ------------------------------------------------------------SECCION INICIO------------------------------------------------------------ */
+
+.conoceAgenda2025 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-fondo-claro;
+    color: $color-negro;
+    height: 100px;
+    font-family: "Dancing Script", cursive;
+    font-size: 30px;
+    padding: 20px;
+}
+
+#destacadosInicio {
+    background-color: $color-principal;
+    color: $color-negro;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.card-text {
+    font-size: 0.5em;
+}
+
+.card {
+    background-color: rgba($color-secundario, 0.86);
+    border: 1px solid $color-negro;
+    border-radius: 15px; 
+}
+
+.tituloSeccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 90px;
+    margin-left: 20px;
+    font-size: 40px;
+    color: $color-fondo-claro;
+}
+
+.subtitulo-seccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgFondo {
+    width: 1750px;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.pieFoto {
+    color: $color-fondo-claro;
+    text-align: end;
+    font-size: 50px;
+    padding-right: 20px;
+}
+
+.imagenesInicio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.itemDestacado {
+    display: inline-block;
+    width: 250px;
+    margin: 0 15px 30px 15px;
+    vertical-align: top;
+
+    img {
+        width: 100%;
+        height: 250px;
+        border-radius: 15px;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: space-between;
+    }
+}
+
+.textoInferiorImagen {
+    font-size: 20px;
+    color: $color-negro;
+    text-align: center;
+}
+
+.btn-custom {
+    background-color: $color-claro;
+    color: $color-negro;
+    border-color: $color-gris;
+    &:hover,
+    &:focus,
+    &:active {
+        @include boton-hover-focus;
+    }
+}
+
+/* ------------------------------------------------------------SECCION QUIENES SOMOS------------------------------------------------------------ */
+
+.quienesSomosContenido {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px;
+    margin: 0 auto;
+    max-width: 1200px;
+    
+    .textoQuienesSomos {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: $color-texto-gris;
+            margin-bottom: 20px;
+        }
+
+        .botonMasInfo {
+            align-self: flex-start;
+            padding: 12px 25px;
+            background-color: $color-claro;
+            color: $color-negro;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            border: 1px solid $color-gris;
+            &:hover,
+            &:focus,
+            &:active {
+        @include boton-hover-focus;
+    }
+        }
+    }
+
+    .imagenQuienesSomos {
+        flex-shrink: 0;
+        width: 350px;
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid $color-negro;
+        }
+    }
+}
+
+/* ------------------------------------------------------------SECCION PRODUCTOS------------------------------------------------------------ */
+
+.productosContenedor {
+    padding: 40px 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.itemProductoHorizontal {
+    background-color: rgba($color-secundario, 0.86);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    display: block;
+    border: 1px groove $color-negro;
+}
+
+.tituloProducto {
+    font-size: 1.5em;
+    color: $color-gris-oscuro;
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.contenedorImagenTexto {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.imagenProductoHorizontal {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    flex-shrink: 0;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.descripcionHorizontal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.textoHorizontalDerecha {
+    font-size: 0.7em;
+    color: $color-texto-gris-claro;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    overflow-wrap: break-word;
+}
+
+.botonVerMas {
+    text-align: center;
+    background-color: $color-fondo-claro;
+    color: $color-negro;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid $color-gris;
+    margin-top: auto;
+
+    &:hover,
+    &:focus,
+    &:active {
+        @include boton-hover-focus;
+    }
+}
+
+
+/* ------------------------------------------------------------SECCION SERVICIOS------------------------------------------------------------ */
+
+.contenedorServicios {
+    text-align: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+    .bloqueServicio {
+        width: 280px;
+        background-color: rgba($color-secundario, 0.86);
+        padding-bottom: 20px;
+        border-radius: 10px;
+        flex-basis: 280px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+
+        .contenedorImagen {
+            width: 100%;
+            height: 180px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border-radius: 10px 10px 0 0;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .tituloServicio {
+            margin: 0 15px 20px 15px;
+        }
+
+        .textoInferiorServicio {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: small;
+            margin: auto 15px 20px 15px;
+        }
+
+        .botonVerMasServicios {
+            text-align: center;
+            background-color: $color-fondo-claro;
+            color: $color-negro;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            border: 1px solid $color-gris;
+            margin: auto 70px 0 70px;
+            
+            &:hover,
+            &:focus,
+            &:active {
+                @include boton-hover-focus;
+            }
+        }
+    }
+}
+
+
+/* ------------------------------------------------------------SECCION CONTACTO------------------------------------------------------------ */
+
+.formularioContacto {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+
+    .form-grupo {
+        margin-bottom: 20px;
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: $color-fondo-claro;
+        }
+    }
+
+    .cajaForm {
+        width: 400px;
+        padding: 10px;
+        border: 1px solid $color-borde-gris;
+        border-radius: 5px;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: $color-placeholder;
+    }
+
+    .boton-form-send {
+        max-width: 400px;
+        padding: 12px;
+        border: 1px solid $color-gris;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        background-color: $color-claro;
+        color: $color-negro;
+
+        &:hover,
+        &:focus {
+            @include boton-hover-focus;
+            outline: none;
+        }
+
+        &:active {
+            background-color: $color-efect-button;
+        }
+    }
+}
+
+/*--------------------------------------------MEDIA QUERIES--------------------------------------------*/
+@media (max-width: 768px) {
+    // Estilos para la sección de inicio
+    .conoceAgenda2025 {
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .texto-novedades-index {
+        margin: 0;
+    }
+
+    // Estilos para la sección de productos
+    .productosContenedor {
+        .tituloSeccion {
+            text-align: center;
+        }
+
+        .contenedorImagenTexto {
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+
+        .imagenProductoHorizontal img {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .textoHorizontalDerecha {
+            text-align: center;
+        }
+    }
+
+    // Estilos para la sección de servicios
+    .contenedorServicios {
+        padding: 20px 10px;
+    }
+
+    // Estilos para la sección "Quiénes Somos"
+    .quienesSomosContenido {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        gap: 30px;
+
+        .textoQuienesSomos {
+            text-align: center;
+            
+            .botonMasInfo {
+                align-self: center;
+            }
+        }
+
+        .imagenQuienesSomos {
+            width: 100%;
+            flex-shrink: 1;
+        }
+    }
+
+    // Estilos para el formulario de contacto
+    .formularioContacto {
+        padding: 15px;
+        box-sizing: border-box;
+
+        .form-grupo {
+            margin-bottom: 15px;
+        }
+        
+        .boton-form-send {
+            width: 100%;
+        }
+    }
+    
+    // Estilos para el footer
+    .footer-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 25px;
+        grid-template-areas:
+            "logo"
+            "."
+            "."
+            "."
+            "contacto"
+            "copyright";
+        justify-items: center;
+    }
+
+    .footer-logo-grid {
+        justify-self: center;
+        margin-left: 0;
+    }
+
+    .footer-iconos {
+        border-right: none;
+        padding-right: 0;
+        width: auto;
+    }
+
+    .footer-contacto-redes {
+        justify-self: center;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .titulo-icono-footer {
+        font-size: 1.2em;
+    }
+
+    .subtitulo-icono-footer {
+        font-size: 0.8em;
+    }
+
+    .footer-redes-grid a {
+        font-size: 2em;
+    }
+    
+    .footer-redes-grid {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
     }
 }
