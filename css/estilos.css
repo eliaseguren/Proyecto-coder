@@ -105,6 +105,12 @@ ul {
   display: flex;
   gap: 25px;
 }
+#encabezado .mainNav .menuPrincipal li {
+  transition: transform 0.3s ease;
+}
+#encabezado .mainNav .menuPrincipal li:hover {
+  transform: scale(1.1);
+}
 #encabezado .mainNav .menuPrincipal a {
   color: black;
 }
