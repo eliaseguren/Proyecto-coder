@@ -31,6 +31,8 @@ body {
 
 main {
   flex-grow: 1; /* "Empuja" el footer para abajo rellenando el espacio que quede hasta llegar al min-height de 100vh del body*/
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 * {
@@ -59,6 +61,26 @@ ul {
 /*------------------------------------------------------------VARIABLES------------------------------------------------------------*/
 /*------------------------------------------------------------COLORES DE SOCIAL MEDIA------------------------------------------------------------*/
 /*------------------------------------------------------------MIXINS------------------------------------------------------------*/
+.whatsapp-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  font-size: 3em;
+  color: #25D366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+.whatsapp-fixed:hover {
+  transform: scale(1.1);
+}
+
 /* ------------------------------------------------------------ENCABEZADO (todas las paginas iguales)------------------------------------------------------------ */
 #encabezado {
   background-color: #d58d8a;
@@ -114,6 +136,10 @@ ul {
   background-color: #8c728e;
   color: white;
   border-color: #8c728e;
+  transition: transform 0.3s ease;
+}
+.header-search-nav .d-flex .btn-outline-success:hover:hover, .header-search-nav .d-flex .btn-outline-success:hover:focus, .header-search-nav .d-flex .btn-outline-success:hover:active, .header-search-nav .d-flex .btn-outline-success:focus:hover, .header-search-nav .d-flex .btn-outline-success:focus:focus, .header-search-nav .d-flex .btn-outline-success:focus:active, .header-search-nav .d-flex .btn-outline-success:active:hover, .header-search-nav .d-flex .btn-outline-success:active:focus, .header-search-nav .d-flex .btn-outline-success:active:active {
+  transform: scale(1.05);
 }
 .header-search-nav .d-flex .form-control {
   background-color: white;
@@ -147,11 +173,15 @@ ul {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  padding-right: 15px;
 }
 .footer-grid .footer-redes-grid a {
   font-size: 2.5em;
   color: black;
   transition: color 0.3s ease;
+}
+.footer-grid .footer-redes-grid a:hover {
+  transform: rotate(25deg) scale(1.2); /* Gira 15 grados y se agranda */
 }
 .footer-grid .footer-redes-grid a .fa-facebook:hover {
   color: #1877F2;
@@ -233,6 +263,14 @@ ul {
 }
 
 /* ------------------------------------------------------------SECCION INICIO------------------------------------------------------------ */
+@keyframes parpadeo {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .conoceAgenda2025 {
   display: flex;
   justify-content: center;
@@ -243,6 +281,10 @@ ul {
   font-family: "Dancing Script", cursive;
   font-size: 30px;
   padding: 20px;
+}
+.conoceAgenda2025 .texto-novedades-index {
+  opacity: 0;
+  animation: parpadeo 2s infinite;
 }
 
 #destacadosInicio {
@@ -331,15 +373,20 @@ ul {
   text-align: center;
 }
 
-.btn-custom {
+.card .btn-custom {
   background-color: #faf6f6;
   color: black;
   border-color: grey;
 }
-.btn-custom:hover, .btn-custom:focus, .btn-custom:active {
+.card .btn-custom:hover, .card .btn-custom:focus, .card .btn-custom:active {
   background-color: #8c728e;
   color: white;
   border-color: #8c728e;
+  transition: transform 0.3s ease;
+  transform: scale(1.05);
+}
+.card .btn-custom:hover:hover, .card .btn-custom:hover:focus, .card .btn-custom:hover:active, .card .btn-custom:focus:hover, .card .btn-custom:focus:focus, .card .btn-custom:focus:active, .card .btn-custom:active:hover, .card .btn-custom:active:focus, .card .btn-custom:active:active {
+  transform: scale(1.05);
 }
 
 /* ------------------------------------------------------------SECCION QUIENES SOMOS------------------------------------------------------------ */
@@ -371,13 +418,16 @@ ul {
   color: black;
   text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
   border: 1px solid grey;
 }
 .quienesSomosContenido .textoQuienesSomos .botonMasInfo:hover, .quienesSomosContenido .textoQuienesSomos .botonMasInfo:focus, .quienesSomosContenido .textoQuienesSomos .botonMasInfo:active {
   background-color: #8c728e;
   color: white;
   border-color: #8c728e;
+  transition: transform 0.3s ease;
+}
+.quienesSomosContenido .textoQuienesSomos .botonMasInfo:hover:hover, .quienesSomosContenido .textoQuienesSomos .botonMasInfo:hover:focus, .quienesSomosContenido .textoQuienesSomos .botonMasInfo:hover:active, .quienesSomosContenido .textoQuienesSomos .botonMasInfo:focus:hover, .quienesSomosContenido .textoQuienesSomos .botonMasInfo:focus:focus, .quienesSomosContenido .textoQuienesSomos .botonMasInfo:focus:active, .quienesSomosContenido .textoQuienesSomos .botonMasInfo:active:hover, .quienesSomosContenido .textoQuienesSomos .botonMasInfo:active:focus, .quienesSomosContenido .textoQuienesSomos .botonMasInfo:active:active {
+  transform: scale(1.05);
 }
 .quienesSomosContenido .imagenQuienesSomos {
   flex-shrink: 0;
@@ -465,6 +515,10 @@ ul {
   background-color: #8c728e;
   color: white;
   border-color: #8c728e;
+  transition: transform 0.3s ease;
+}
+.botonVerMas:hover:hover, .botonVerMas:hover:focus, .botonVerMas:hover:active, .botonVerMas:focus:hover, .botonVerMas:focus:focus, .botonVerMas:focus:active, .botonVerMas:active:hover, .botonVerMas:active:focus, .botonVerMas:active:active {
+  transform: scale(1.05);
 }
 
 /* ------------------------------------------------------------SECCION SERVICIOS------------------------------------------------------------ */
@@ -520,6 +574,10 @@ ul {
   background-color: #8c728e;
   color: white;
   border-color: #8c728e;
+  transition: transform 0.3s ease;
+}
+.contenedorServicios .bloqueServicio .botonVerMasServicios:hover:hover, .contenedorServicios .bloqueServicio .botonVerMasServicios:hover:focus, .contenedorServicios .bloqueServicio .botonVerMasServicios:hover:active, .contenedorServicios .bloqueServicio .botonVerMasServicios:focus:hover, .contenedorServicios .bloqueServicio .botonVerMasServicios:focus:focus, .contenedorServicios .bloqueServicio .botonVerMasServicios:focus:active, .contenedorServicios .bloqueServicio .botonVerMasServicios:active:hover, .contenedorServicios .bloqueServicio .botonVerMasServicios:active:focus, .contenedorServicios .bloqueServicio .botonVerMasServicios:active:active {
+  transform: scale(1.05);
 }
 
 /* ------------------------------------------------------------SECCION CONTACTO------------------------------------------------------------ */
@@ -562,7 +620,11 @@ ul {
   background-color: #8c728e;
   color: white;
   border-color: #8c728e;
+  transition: transform 0.3s ease;
   outline: none;
+}
+.formularioContacto .boton-form-send:hover:hover, .formularioContacto .boton-form-send:hover:focus, .formularioContacto .boton-form-send:hover:active, .formularioContacto .boton-form-send:focus:hover, .formularioContacto .boton-form-send:focus:focus, .formularioContacto .boton-form-send:focus:active {
+  transform: scale(1.05);
 }
 .formularioContacto .boton-form-send:active {
   background-color: #8c728e;
