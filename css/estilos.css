@@ -454,8 +454,7 @@ ul {
   max-width: 500px;
   margin: 0 auto;
 }
-
-.itemProductoHorizontal {
+.productosContenedor .itemProductoHorizontal {
   background-color: rgba(255, 195, 193, 0.86);
   border-radius: 10px;
   margin-bottom: 30px;
@@ -463,42 +462,37 @@ ul {
   display: block;
   border: 1px groove black;
 }
-
-.tituloProducto {
+.productosContenedor .itemProductoHorizontal .tituloProducto {
   font-size: 1.5em;
   color: #333;
   text-align: center;
   margin-bottom: 20px;
   text-decoration: underline;
 }
-
-.contenedorImagenTexto {
+.productosContenedor .itemProductoHorizontal .contenedorImagenTexto {
   display: flex;
   align-items: flex-start;
   gap: 30px;
 }
-
-.imagenProductoHorizontal {
+.productosContenedor .itemProductoHorizontal .contenedorImagenTexto .imagenProductoHorizontal {
   width: 200px;
   height: 200px;
   overflow: hidden;
   border-radius: 10px;
   flex-shrink: 0;
 }
-.imagenProductoHorizontal img {
+.productosContenedor .itemProductoHorizontal .contenedorImagenTexto .imagenProductoHorizontal img {
   display: block;
   width: 100%;
   height: 100%;
 }
-
-.descripcionHorizontal {
+.productosContenedor .itemProductoHorizontal .contenedorImagenTexto .descripcionHorizontal {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
 }
-
-.textoHorizontalDerecha {
+.productosContenedor .itemProductoHorizontal .contenedorImagenTexto .descripcionHorizontal .textoHorizontalDerecha {
   font-size: 0.7em;
   color: #666;
   line-height: 1.5;
@@ -522,6 +516,7 @@ ul {
   color: white;
   border-color: #8c728e;
   transition: transform 0.3s ease;
+  transform: scale(1.05);
 }
 .botonVerMas:hover:hover, .botonVerMas:hover:focus, .botonVerMas:hover:active, .botonVerMas:focus:hover, .botonVerMas:focus:focus, .botonVerMas:focus:active, .botonVerMas:active:hover, .botonVerMas:active:focus, .botonVerMas:active:active {
   transform: scale(1.05);
